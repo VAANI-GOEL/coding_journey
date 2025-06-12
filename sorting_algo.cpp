@@ -8,11 +8,15 @@ int main() {
 		cin >> arr[i];
 	}
 	for (int i = n - 1; i >= 1; i--) {
+		int f = 0;
 		for (int z = 0; z < i; z++) {
 			if (arr[z] > arr[z + 1]) {
 				swap(arr[z], arr[z + 1]);
+			} else {
+				f++;
 			}
 		}
+		if (f == i) {break;}
 	}
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << " ";
